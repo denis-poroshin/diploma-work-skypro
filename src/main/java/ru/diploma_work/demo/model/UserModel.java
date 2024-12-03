@@ -3,6 +3,7 @@ package ru.diploma_work.demo.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
 import ru.diploma_work.demo.dto.Role;
 
 import javax.persistence.*;
@@ -34,18 +35,20 @@ public class UserModel {
      * Пароль для входа в личный кабинет и доступа ко всем эндпоинтам, требующим аутентификации. Хранится в базе данных
      * в зашифрованном виде.
      */
+    @Length(min = 6, max = 16)
     private String password;
     /**
      * Имя пользователя, указанное при регистрации
      */
+    @Length(min = 2, max = 16)
     private String firstName;
     /**
      * Фамилия пользователя, указанная при регистрации
      */
+    @Length(min = 2, max = 16)
     private String lastName;
     /**
-     * Номер телефона пользователя, указанный при регистрации. Значение поля валидируется при помощи регулярного выражения,
-     * прописанного в классе {@link ru.skypro.homework.dto.UpdateUserDTO}
+     * Номер телефона пользователя, указанный при регистрации. Значение поля валидируется при помощи регулярного выражения.
      */
     private String phone;
     /**
@@ -55,7 +58,7 @@ public class UserModel {
     private Role role;
     /**
      * Ссылка на эндпоинт, по которому доступна загрузка изображения - аватара пользователя. Генерируется в процессе обработки
-     * запроса на обновление аватара пользователя в методе updateUserAvatar() в сервисе {@link ru.skypro.homework.service.UserService}
+     * запроса на обновление аватара пользователя в методе updateUserAvatar() в сервисе {@link ru.diploma_work.demo.service.UserService}
      */
     private String image;
     /**

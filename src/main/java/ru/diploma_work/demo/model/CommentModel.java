@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -30,6 +31,7 @@ public class CommentModel {
     /**
      * Текстовое содержание комментария, заданное автором
      */
+    @Length(min = 8, max = 64)
     private String text;
     /**
      * Ссылка на сущность объявления {@link AdModel},к которому привязан комментарий. При удалении из базы данных объявления

@@ -3,6 +3,7 @@ package ru.diploma_work.demo.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import java.util.List;
@@ -24,20 +25,23 @@ public class AdModel {
     private Integer id;
     /**
      * Ссылка на эндпоинт, по которому доступна загрузка изображения из объявления. Генерируется в процессе обработки
-     * запроса на добавление объявления в методе setImageToAd() в сервисе {@link ru.skypro.homework.service.AdService}
+     * запроса на добавление объявления в методе setImageToAd() в сервисе {@link ru.diploma_work.demo.service.AdService}
      */
     private String image;
     /**
      * Стоимость товара в объявлении, указанная автором
      */
+    @Length(max = 10000000)
     private Integer price;
     /**
      * Заголовок объявления, указанный автором
      */
+    @Length(min = 8, max = 64)
     private String title;
     /**
      * Текстовое описание объявления, указанное автором
      */
+    @Length(min = 4, max = 32)
     private String description;
     /**
      * Ссылка на сущность пользователя {@link UserModel}, который является автором объявления
