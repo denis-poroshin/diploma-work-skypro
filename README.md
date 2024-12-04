@@ -14,9 +14,12 @@
 4.1 Необходимо клонировать приложение себе на ПК. Это можно сделать с помощью git. Открываем документ, который хотим клонировать проект, нажимаем правую кнопку мыши на пустое место в документе и выбираем:
 
 ![image](https://github.com/user-attachments/assets/9fd182ff-76ea-435c-ab01-38aec9685cda)
-Откроется консоль, в которой необходимо прописать (git clone https://github.com/denis-poroshin/bank-star.git ):
 
 Ссылку проекта можно взять в git:
+
+![image](https://github.com/user-attachments/assets/b87f4ec5-fd5a-4e55-965c-3e5850c43656)
+
+Откроется консоль, в которой необходимо прописать (git clone https://github.com/denis-poroshin/bank-star.git ):
 
 ![image](https://github.com/user-attachments/assets/ca8b1db4-ae10-4dee-ac52-f946adda1fd4)
 
